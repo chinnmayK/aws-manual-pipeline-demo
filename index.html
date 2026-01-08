@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AWS Manual Pipeline Demo</title>
+
+    <style>
+        /* Reset + base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                         Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0f172a; /* dark slate */
+            color: #e5e7eb;
+            overflow: hidden;
+        }
+
+        /* Mouse glow background */
+        body::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(
+                600px circle at var(--x, 50%) var(--y, 50%),
+                rgba(56, 189, 248, 0.15),
+                transparent 40%
+            );
+            transition: background 0.05s;
+            pointer-events: none;
+        }
+
+        /* Centered container */
+        .container {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 3rem 4rem;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #cbd5f5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🚀 Deployed via AWS Manual Pipeline</h1>
+            <p>Phase 0 completed successfully.</p>
+        </div>
+    </div>
+
+    <script>
+        // Mouse tracking background effect
+        document.addEventListener("mousemove", (e) => {
+            const x = (e.clientX / window.innerWidth) * 100;
+            const y = (e.clientY / window.innerHeight) * 100;
+            document.body.style.setProperty("--x", `${x}%`);
+            document.body.style.setProperty("--y", `${y}%`);
+        });
+    </script>
+</body>
+</html>
